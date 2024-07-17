@@ -1,0 +1,203 @@
+\chapter{Estado del Arte }
+
+\hrule \bigskip \vspace*{1cm}
+
+%La revisión bibliográfica o el estado del Arte son trabajos, publicaciones o propuestas similares realizadas por otros autores que tratan de resolver el mismo problema planteado en el trabajo de tesis pero con diferentes herramientas, métodos o experimentos. No es necesario una descripción al detalle de todos los trabajos de investigación similares encontrados, el estado del arte debe ser preciso y conciso en cuanto al modo de resolver cierto problema, las herramientas utilizadas, los resultados obtenidos y ventajas o desventajas identificadas. Toda esta información ayudará a comprender y contextualizar el área de investigación seleccionada.
+
+Existen diversos trabajos en donde se proponen detectar  estrés agudo,estos trabajos utilizan diferentes métodos los cuales se pueden implementar a través de modelos matemáticos ,modelos Deep learning ,modelos de Maching Learning.
+
+\subsection{ Maching Learning
+} En  \cite{bai2021towards} hicieron un análisis donde usaron  el modelo  Random Forest basados en  efectos mixtos  en donde 
+extrajeron características de cada modalidad  para aprovechar la información demográfica y  mejorar el rendimiento. Los resultados que obtuvieron con los experimentos del   conjunto de datos que recopilaron fueron prometedores. Sugirieron que el ECG(Electrocardiograma) es la señal mas importante en la detección de fatiga.
+
+
+
+
+
+
+
+
+
+\subsection {Por reglas definidas }
+
+\cite{devi2010fuzzy} sugirió la  técnica FIS (Fuzzy Inference Systems ) para la detección de la fatiga, en la que los estados de la boca y los ojos se utilizaron como entrada , para predecir  el estado del conductor ,ya sea  peligroso, fatigado o normal. Dividieron los estados oculares en categorías: parpadeo, cerrado o somnoliento. Mientras que los estados de la boca se clasificaron como normales o bostezos. Otra investigación\cite{sikander2018driver} ha tenido en cuenta las características mencionadas anteriormente y ha desarrollado una técnica para detectar la fatiga utilizando un FIS de dos capas.
+
+En la detección  de fatiga mediante aprendizaje automático,existe el trabajo de \cite{fan2007yawning} que utilizo el bostezo como parámetro ,sugirió un método para rastrear el movimiento de la cara con la ayuda de una cámara. En la técnica   (Gravity-Centre) propuesta por el autor  para detectar las comisuras de la boca utilizando  proyección de grises , extrajo las características de la boca mediante el uso de ondículas de Gabor que produjeron información sobre órganos como los ojos, la nariz, la boca y los labios. utilizaron  ondícula de Gabor de representación bidimensional para analizar y procesar la textura de la imagen. Luego, utilizó el análisis discriminante lineal (LDA) para clasificar los vectores de características con el fin de detectar la guiñada.
+
+La técnica que propusieron  fue evaluada sobre 400 imágenes y 20 videos que constaban de 4512 rostros. Las características de Gabor fueron capaces de detectar bostezos con una precisión del 96\%, mientras que las características geométricas fueron capaces de detectar bostezos con una precisión del 69,5\%.Finalmente concluyeron que los coeficientes de gabor son más eficientes que las características geométrica.
+
+
+
+
+
+\subsection{Detección de fatiga mediante Gradient Boosting Decision Tree (GBDT)}
+
+
+\cite{hu2018automated} Trató de detectar las características de las señales de EEG, mediante el cálculo de conjuntos de características que incluían las entropías, como una muestra, espectral, difusa y aproximada. Los autores utilizaron la técnica   Gradient Boosting Decision Tree (GBDT)  basado en una estrategia codiciosa ,llamada aumento de gradiente, que tenían como entrada las características de EEG . Para evaluarlo, utilizaron tres clasificadores ampliamente conocidos, a saber, K-vecinos más cercanos (KNN), SVM, ANN para la comparación.
+
+Además, los autores realizaron experimentos en 22 seres humanos. Inicialmente, se les pidió que practicaran la conducción durante varios minutos para familiarizarse con el sistema. La duración de los experimentos realizados fue de unos 40-120 minutos. Los resultados de estos experimentos demostraron que fue posible lograr una precisión de hasta el 95\% para detectar la fatiga mediante EEG.
+
+
+
+\subsection{Detección de fatiga mediante aprendizaje profundo}
+Por otro lado en el aprendizaje profundo
+\cite{du2017detecting} propuso un enfoque multimodal mediante la combinación de EEG y electrooculograma (EOG) para detectar la fatiga. Las señales fisiológicas se utilizaron ampliamente para detectar el estado de los seres humanos.
+Por medio de  la amplitud dedujeron  que las  señales  EOG son más efectivas contra el ruido.   %La amplitud de las señales EOG en comparación con las señales EEG es mayor, por lo que las señales EOG son más efectivas contra el ruido.
+Además , los autores introdujeron un modelo  multimodal de autoencoder  para la detección de fatiga. El modelo que presentaron  utilizo señales de EEG y EOG. El experimento se realizó en personas a las que se les pidió que condujeran durante al menos 2 horas ,se capturaron las señales de EOG y EEG utilizando un sistema NeuroScan y se utilizó SVM junto con la función de base radial (RBF) como modelo de regresión.
+
+
+%Para medir la eficiencia de la técnica de fusión, los autores entrenaron dos modelos unimodales solo con señales de EEG y EOG. El resultado de esto se comparó con otro modelo entrenado con estrategias de fusión. El resultado del experimento sugirió que el modelo de fusión de características funciona mejor que el modelo entrenado en características individuales. 
+
+Finalmente la precisión que obtuvieron  del modelo    auto-encoder multimodal   fue de 85\%.
+
+
+\cite{computation7010013}  Desarrollo técnicas de última generación para detectar etapas de somnolencia en EEG (la mejor medición fisiológica). Se utilizo un bloque de Transformada de Coseno Discreto (DCT) para realizar la transformación en la frecuencia muestral de EEG. Utilizaron un autoencoder para descubrir patrones de datos no supervisados junto con la reducción de dimensionalidad.
+
+Los resultados que obtuvieron    fueron 100\% precisos cuando se probaron en 62 individuos, dominando todas las metodologías anteriores y prometiendo una utilidad en las futuras generaciones de dispositivos médicos.
+
+%Se utiliza un bloque de transformada discreta de coseno (DCT) para realizar la transformación en el dominio de la frecuencia de las muestras de EEG. A continuación, los resultados se redimensionan mediante una reasignación bicúbica constituida por 256 muestras. El resultado transformado se convierte en una matriz unidimensional que consta de 256 muestras de frecuencia. Las entradas para las capas del autocodificador fueron señales de frecuencia optimizadas de EEG generadas a partir de DCT. Un codificador automático se utiliza para descubrir patrones de datos no supervisados junto con la reducción de la dimensionalidad. Con el fin de aumentar la eficiencia del sistema, se considera un enfoque codicioso por capas (Fig. 3).
+
+
+
+\begin{center}
+    \begin{tikzpicture}[node distance=1cm, auto]
+    
+    % Define style for boxes
+    \tikzstyle{main} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+    \tikzstyle{sub} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+    
+    % Nodes
+    \node (fatigue) [main] {Stress Detection Methods};
+    \node (mathmodels)[sub, below left=of fatigue] {Using Mathematical Models};
+    \node (rulebased) [sub, below=of fatigue] {Rule Based};
+    \node (machinelearn) [sub, below right=of fatigue] {Machine Learning};
+    
+    \node (fuzzylogic)[sub, below=of rulebased]{Fuzzy Logic};
+    %\node (deeplearn) [sub, below right=of fatigue]{Deep Learning};
+    
+    \node (processmodel) [sub, below=of mathmodels] {2 or 3 process model};
+    %\node (fuzzylogic) [sub, below=of processmodel] {Fuzzy Logic};
+    \node (svmgbdt) [sub, below=of machinelearn] {SVM, GBDT};
+    
+    
+    \node (deeplearn) [sub, below=of svmgbdt] {Deep Learning};
+    
+    
+    \node (cnnann) [sub, below left=of deeplearn] {CNN, ANN};
+    \node (multimodalcnn) [sub, below=of deeplearn] {Multimodal CNN};
+    \node (deepcnn) [sub, below right=of deeplearn] {Deep CNN};
+    
+    % Lines
+    \draw[-Latex] (fatigue) -| (mathmodels);
+    \draw[-Latex] (fatigue) -- (rulebased);
+    \draw[-Latex] (fatigue) -| (machinelearn);
+    %\draw[-Latex] (fatigue) -| (deeplearn);
+    
+    \draw[-Latex] (mathmodels) -- (processmodel);
+    \draw[-Latex] (rulebased)--(fuzzylogic);
+    %\draw[-Latex] (processmodel) -- (fuzzylogic);
+    \draw[-Latex] (machinelearn) -- (svmgbdt);
+    \draw[-Latex] (svmgbdt) -- (deeplearn);
+    
+    \draw[-Latex] (deeplearn) -| (cnnann);
+    \draw[-Latex] (deeplearn) -- (multimodalcnn);
+    \draw[-Latex] (deeplearn) -| (deepcnn);
+    
+    \end{tikzpicture}
+    
+    
+    
+    \end{center}
+    
+    
+    
+    \begin{center}
+    \begin{tikzpicture}[node distance=1cm, auto]
+    
+    % Define style for boxes
+    \tikzstyle{main} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+    \tikzstyle{sub} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+    
+    % Nodes
+    \node (fatigue) [main] {stress Detection Methods};
+    \node (deeplearn)[sub, below =of fatigue] {Deep Learning};
+    
+    \node (cnnann)[sub, below left =of deeplearn] {CNN, ANN};
+    \node (multimodalcnn)[sub, below =of deeplearn] {Multimodal CNN};
+    \node (deepcnn)[sub, below right =of deeplearn] {Deep CNN};
+    
+    
+    
+    
+    % Lines
+    \draw[-Latex] (fatigue) -- (deeplearn);
+    
+    %\draw[-Latex] (fatigue) -| (deeplearn);
+    
+    
+    \draw[-Latex] (deeplearn) -| (cnnann);
+    \draw[-Latex] (deeplearn) -- (multimodalcnn);
+    \draw[-Latex] (deeplearn) -| (deepcnn);
+    
+    \end{tikzpicture}
+    
+    
+    
+    \end{center}
+    
+    
+
+
+
+\begin{table}[h!]
+    \centering
+    \caption{Resumen de todas las metodologías para la detección de estrés .}
+    \label{tab:metodologias}
+    \begin{scriptsize} % Reduce the font size
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Tipos de Características} & \textbf{Modelo de Extracción de Datos} & \textbf{Precisión} & \textbf{Datos} \\ \hline
+    
+    Detección de bostezos            & Coeficientes de Gabor                                 & 95\%               & 400 images \cite{fan2007yawning}              \\ \hline
+    
+    Estado del ojo                    & AdaBoost                             & 90.18\%            &    2100 images \cite{wang2010novel}             \\ \hline
+    
+    Señales EEG                       & Árbol de Decisión Potenciado         & 95\%               &   Serie Temporal\cite{hu2018automated}            \\ \hline
+    
+    Comportamiento facial             & SVM                                  & 94.8\%             &     Imagenes iBUG 300-W\cite{carass}       \\ \hline
+    
+    registros EEG            & Neural Network                                  & 83.6\%             &  del MIT-BIH\cite{national2011fars}            \\ \hline
+    
+    EEG (Tiempo Real)              &Linear Regression                                 & 90\%             &       Tiempo Real         \\ \hline
+    
+    
+    Skin conductance            &SVM                                 & 92.95\%             &  Imágenes  \cite{bundele2009svm}
+               \\ \hline
+    
+    EDA             &Estadístico basado en  la excitación                                   & 79.17\%           &  Series de Tiempo               \\ \hline
+    
+    EDA y audio             &SVM y ANN                                   & 88.8\%           &   Wesad\cite{Schmidt2018IntroducingWA}               \\ \hline
+    
+    EEG            &Autoencoder  y DCT                                 & 100\%           &   \cite{computation7010013}               \\ \hline
+    
+    multimodal            &modelo random forest-based mixed-effects,                                 & 0.75            &   \cite{10.1145/3460421.3480429}               \\ \hline
+    
+    %EDA+BVP+ST            &NN                           & 94.16\%            &   \cite{10.1007/978-3-031-08530-%7_77}               \\ \hline
+    
+    EDA+HR          &AcRoNN                           & 86.87\%            &   \cite{alam2021activity}               \\ \hline
+    
+    ECG, EDA,EMG  ,EEG          &LSTM, RF                           & 84.1\%            &   \cite{Jaiswal2022AssessingFW}               \\ \hline
+    
+    EDA            & ADA-bosst                        & 97.03\%            &   \cite{9995093}               \\ \hline
+    
+    ECG           & CNN                   &  98.57\%            &   WESAD\cite{YING2023763}               \\ \hline
+    
+    Multimodal           & SELF-CARE                  &  94.12\%            &   WESAD\cite{rashid2023stress}               \\ \hline
+    
+    
+    \end{tabular}
+    \end{scriptsize} % End of font size reduction
+    \end{table}
+    
+    
+    
